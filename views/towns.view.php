@@ -12,7 +12,7 @@ $student = new TownCity($db);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Records</title>
+    <title>Towns</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
@@ -21,7 +21,7 @@ $student = new TownCity($db);
     <?php include('../includes/navbar.php'); ?>
 
     <div class="content">
-    <h2>Student Records</h2>
+    <h2>Towns</h2>
     <table class="orange-theme">
         <thead>
             <tr>

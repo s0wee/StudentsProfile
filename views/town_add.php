@@ -2,7 +2,8 @@
 include_once("../db.php");
 include_once("../town_city.php");
 
-// Assuming $db is your database connection instance
+$db = new Database();
+$connection = $db->getConnection();
 $townCity = new TownCity($db);
 
 // Example usage:
@@ -18,7 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["city_id"]) && isset($_
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add City</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
     <h2>Add a City</h2>
