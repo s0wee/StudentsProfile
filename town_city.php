@@ -20,5 +20,19 @@ class TownCity {
             throw $e; // Re-throw the exception for higher-level handling
         }
     }
+    public function create($cityId, $cityName) {
+        try {
+            $sql = "INSERT INTO town_city (city_id, city_name) VALUES (:cityId, :cityName)";
+            $stmt = $this->db->getConnection()->prepare($sql);
+            $stmt->bindParam(':cityId', $cityId);
+            $stmt->bindParam(':cityName', $cityName);
+            $stmt->execute();
+
+            echo "City created: ID - $cityId, Name - $cityName\n";
+        } catch (PDOException $e) {
+            // Handle errors (log or display)
+            throw $e; // Re-throw the exception for higher-level handling
+        }
+    }
 }
 ?>

@@ -1,10 +1,10 @@
 <?php
 include_once("../db.php");
-include_once("../student.php");
+include_once("../town_city.php");
 
 $db = new Database();
 $connection = $db->getConnection();
-$student = new Student($db);
+$student = new TownCity($db);
 
 ?>
 <!DOCTYPE html>
@@ -25,13 +25,9 @@ $student = new Student($db);
     <table class="orange-theme">
         <thead>
             <tr>
-                <th>Student Number</th>
-                <th>First Name</th>
-                <th>Middle Name</th>
-                <th>Last Name</th>
-                <th>Gender</th>
-                <th>Birthdate</th>
-                <th>Action</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Edit | Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -40,16 +36,13 @@ $student = new Student($db);
             
             
             <?php
-            $results = $student->displayAll(); 
+            $results = $student->getAll(); 
             foreach ($results as $result) {
             ?>
             <tr>
-                <td><?php echo $result['student_number']; ?></td>
-                <td><?php echo $result['first_name']; ?></td>
-                <td><?php echo $result['middle_name']; ?></td>
-                <td><?php echo $result['last_name']; ?></td>
-                <td><?php echo $result['gender']; ?></td>
-                <td><?php echo $result['birthday']; ?></td>
+                <td><?php echo $result['id']; ?></td>
+                <td><?php echo $result['name']; ?></td>
+              
                 <td>
                     <a href="student_edit.php?id=<?php echo $result['id']; ?>">Edit</a>
                     |
