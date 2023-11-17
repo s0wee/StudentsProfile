@@ -2,7 +2,7 @@
     position: fixed;
     width: 250px;
     height: 100%;
-    background-color: #D8F3DC; /* Background color using the provided hex code */
+    background-color: #1d2b1f; /* Background color using the provided hex code */
     color: #74C69D; /* Text color using the provided hex code */
     padding: 20px;
 }
@@ -156,7 +156,7 @@ input[type="submit"]:hover {
 
 /* Header */
 header {
-    background-color: #D8F3DC;
+    background-color: #1d2b1f;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -182,7 +182,7 @@ header {
 .button-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #74C69D; /* Button background color */
+    background-color: #24c273; /* Button background color */
     color: #fff; /* Button text color */
     text-decoration: none;
     border: none;
@@ -197,7 +197,7 @@ header {
 
 /* Footer */
 footer {
-    background-color: #D8F3DC;
+    background-color: #1d2b1f;
     color: #fff;
     padding: 20px 0;
     text-align: center;
