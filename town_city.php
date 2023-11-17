@@ -39,15 +39,15 @@ class TownCity {
         try {
             $connection = $this->db->getConnection();
 
-            $sql = "SELECT * FROM students WHERE id = :id";
+            $sql = "SELECT * FROM town_city WHERE city_id = :city_id";
             $stmt = $connection->prepare($sql);
             $stmt->bindValue(':id', $id);
             $stmt->execute();
 
             // Fetch the student data as an associative array
-            $studentData = $stmt->fetch(PDO::FETCH_ASSOC);
+            $cityData = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            return $studentData;
+            return $cityData;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
             throw $e; // Re-throw the exception for higher-level handling
