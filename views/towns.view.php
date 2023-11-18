@@ -31,8 +31,6 @@ $student = new TownCity($db);
             </tr>
         </thead>
         <tbody>
-            <!-- You'll need to dynamically generate these rows with data from your database -->
-       
             
             
             <?php
@@ -40,26 +38,22 @@ $student = new TownCity($db);
             foreach ($results as $result) {
             ?>
             <tr>
-                <td><?php echo $result['id']; ?></td>
-                <td><?php echo $result['name']; ?></td>
-              
+                <td><?php echo $result['city_id']; ?></td>
+                <td><?php echo $result['city_name']; ?></td>
                 <td>
-                    <a href="student_edit.php?id=<?php echo $result['id']; ?>">Edit</a>
+                    <a href="town_edit.php?id=<?php echo $result['city_id']; ?>">Edit</a>
                     |
-                    <a href="student_delete.php?id=<?php echo $result['id']; ?>">Delete</a>
+                    <a href="town_delete.php?id=<?php echo $result['city_id']; ?>">Delete</a>
                 </td>
             </tr>
         <?php } ?>
-
-           
         </tbody>
     </table>
         
-    <a class="button-link" href="student_add.php">Add New Record</a>
+    <a class="button-link" href="town_add.php">Add New Record</a>
 
         </div>
         
-        <!-- Include the header -->
   
     <?php include('../templates/footer.html'); ?>
 

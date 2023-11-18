@@ -1,6 +1,6 @@
 <?php
 include_once("../db.php");
-include_once("../student.php");
+include_once("../town_city.php");
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -50,10 +50,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="content">
     <h2>Edit City</h2>
     <form action="" method="post">
-        <input type="hidden" name="id" value="<?php echo $cityData['id']; ?>">
         
         <label for="city_id">City ID:</label>
-        <input type="text" name="city_id" id="city_id" value="<?php echo $cityData['city_id']; ?>">
+        <input type="number" name="city_id" id="city_id" value="<?php echo $cityData['city_id']; ?>">
+        
+        <label for="city_name">City Name:</label>
+        <input type="text" name="city_name" id="city_name" value="<?php echo $cityData['city_name']; ?>">
         
         <input type="submit" value="Update">
     </form>
