@@ -40,6 +40,10 @@ $student = new Student($db);
             
             
             <?php
+            $birthdate = "1983-07-11";
+            $formatted_date = date("M d Y", strtotime($birthdate));
+            echo $formatted_date; // Output: Jul 11 1983
+            
             $results = $student->displayAll(); 
             foreach ($results as $result) {
             ?>

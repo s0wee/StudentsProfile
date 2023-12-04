@@ -42,27 +42,21 @@ class Student {
     public function read($id) {
         try {
             $connection = $this->db->getConnection();
-    
+
             $sql = "SELECT * FROM students WHERE id = :id";
             $stmt = $connection->prepare($sql);
             $stmt->bindValue(':id', $id);
             $stmt->execute();
-    
+
             // Fetch the student data as an associative array
             $studentData = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-            if ($studentData === false) {
-                // No data found for the provided ID
-                return null; // Or handle this case as per your requirements
-            }
-    
+
             return $studentData;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
             throw $e; // Re-throw the exception for higher-level handling
         }
     }
-    
 
     public function update($id, $data) {
         try {
